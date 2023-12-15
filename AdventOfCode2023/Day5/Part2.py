@@ -12,10 +12,10 @@ seed_target = re.findall(r'\d+', lines[0])
 seed_nums = [int(num) for num in seed_target]
 
 
-seeds = np.array([])
+seeds = []
 s = 1
 while s < len(seed_nums):
-    new_s = np.arange(seed_nums[s-1], seed_nums[s] + seed_nums[s-1])
+    new_s = range(seed_nums[s-1], seed_nums[s] + seed_nums[s-1])
     seeds = np.concatenate((seeds, new_s), axis=None)
     s += 2
 
@@ -61,9 +61,3 @@ print(min(seeds))
 
 print('----------------------------------')
 print(datetime.now())
-
-
-
-
-
-
